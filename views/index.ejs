@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAGR calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="navbar">
+        <ul class="link_ul">
+            <li><a href="https://cagrcalculator.net" class="navbar_link">CAGR calculator</a></li>
+            <li><a href="https://google.com" class="navbar_link"><strong>Google</strong></a></li>
+            <li><a href="https://youtube.com" class="navbar_link"><strong>Youtube</strong></a></li>
+            <li><a href="https://facebook.com" class="navbar_link"><strong>Facebook</strong></a></li>
+            <li><a href="https:udemy.com" class="navbar_link"><strong>Udemy</strong></a></li>
+        </ul>
+    </div>
+    <div id="calculator_container">
+        <h1>CAGR Calculator</h1>
+        <h2 class="h2_text">Calculate compound annual growth rate online</h2>
+        <div id="cagr_card">
+            <div id="cagr_top_text">
+                <p>CAGR Calculator</p>
+            </div>
+            <div class="cagr_card_content">
+                <form action="/result" method="post" id="cagr_form">
+                    <p class="cagr_card_font">Starting Value <small>(Initial Investment)</small></p>
+                    <input type="number" class="cagr_input" id="start_input" placeholder="e.g. 1000"
+                        name="starting_value">
+
+                    <p class="cagr_card_font">Ending Value <small>(Final Investment)</small></p>
+                    <input type="number" class="cagr_input" id="end_input" placeholder="e.g. 10000" name="ending_value">
+
+                    <p class="cagr_card_font"> Number of Periods <small>(in Years or Months)</small></p>
+                    <input type="number" class="cagr_input" id="periods_input" placeholder="e.g. 3"
+                        name="number_of_peroids">
+
+                    <% if (result===null) { %>
+                        <button type="submit" id="calculate_button">Calculate</button>
+                        <% } else { %>
+                            <button type="submit" id="calculate_button">Recalculate</button>
+                            <div id="cagr_calculator_box">
+                                <p>CAGR: <span id="result_colour">
+                                        <%= result %>%
+                                    </span></p>
+                                <div>
+                                    <p><small>(Compound Annual Growth Rate)</small></p>
+                                </div>
+                            </div>
+                            <% } %>
+                </form>
+            </div>
+            <div id="footer_card">
+                <p>Enter value to compute the Compound Annual Growth Rate (CAGR)</p>
+            </div>
+        </div>
+    </div>
+    <div id="second_container">
+        <div class="explain">
+            <h2 class="cagr_content">What is Compound Annual Growth Rate (CAGR)</h2>
+        </div>
+        <p class="explain_content">The compound annual growth rate, or CAGR for short, is the average rate at which some
+            value (investment)
+            grows over a certain period of time assuming the value has been compounding over that time period.</p>
+        <p class="explain_content">know more about <a
+                href="https://en.wikipedia.org/wiki/Compound_annual_growth_rate">CAGR</a></p>
+        <div class="explain headline">
+            <h2 class="cagr_content">CAGR calculator formula :</h2>
+        </div>
+        <p class="explain_content">The <a href="https://cagrcalculator.net/formula-for-cagr-calculation/">formula for
+                CAGR</a> is:</p>
+        <p class="explain_content">CAGR = (EV / SV)<sup>1/n</sup> - 1</p>
+        <p class="explain_content">where:</p>
+        <p class="explain_content">EV = Investment's ending value<br>
+            SV = Investment's starting value<br>
+            n = Number of investment periods (months, years, etc.)
+        </p>
+        <div class="yellow_headline">
+            <p><span style="font-weight: 600;">Also check</span><a class="anchor_blue"
+                    href="https://cagrcalculator.net/reverse-cagr-calculator/">: Future Value Calculator With CAGR</a>
+            </p>
+        </div>
+        <div class="explain headline">
+            <h2 class="cagr_content">How CAGR Calculated</h2>
+        </div>
+        <p class="explain_content">We can use the formula above to calculate the CAGR.</p>
+        <p class="explain_content">Assume an investment’s starting value is $1,000 and it grows to $10,000 in 3 years.
+            The CAGR
+            calculation is as follows:</p>
+        <p class="explain_content">CAGR = (10000/1000)<sup>1/3</sup> - 1</p>
+        <p class="explain_content">CAGR = 1.1544</p>
+        <p class="explain_content">Hence, CAGR percentage = CAGR x 100 = 1.1544 x 100 = 115.44 %</p>
+        <p class="explain_content"><a href="https://cagrcalculator.net/cagr-calculation-in-excel/">Calculation of CAGR
+                with Excel</a></p>
+        <div class="explain headline">
+            <h2 class="cagr_content">Where CAGR Calculator matters</h2>
+        </div>
+        <p class="explain_content">The compound annual growth are applied at various places of personal finance. It is
+            often used to calculate the average growth of single investment over a certain period. CAGR can be applied
+            in comparing return on equity with bonds or savng accounts. Further, it can be used to compare the
+            performance of two companies and forecasting their future growth based on their historical data.
+        </p>
+        <div class="explain headline">
+            <h2 class="cagr_content">Limitation of CAGR</h2>
+        </div>
+        <p class="explain_content">CAGR doesn't accounts for volatility. It calculates only the average percentage
+            return and so CAGR values should never taken as only tool for investment return assessment.</p>
+        <div class="explain headline">
+            <h2 class="cagr_content">About CAGR Calculator</h2>
+        </div>
+        <p class="explain_content">CAGR Calculator is free online tool to calculate compound annual growth rate for your
+            investment over a time
+            period. To get the CAGR value for your investment, enter the starting value or initial investment amount
+            along with the expected ending value and the number of months or years for which you want to calulate the
+            CAGR. Next, click on calculate button and let the online CAGR calculator calculate the value for you. It
+            tells you, how much your intial investment has grown over the selected course of time along with bar chart
+            for more clear picture of your annually or periodically growth.
+        </p>
+        <p id="read_more">Read More :</p>
+        <p class="explain_content"><a href="https://cagrcalculator.net/sp-500-cagr/">S&P 500 CAGR</a></p>
+        <div class="yellow_headline other_calculator_adjust">
+            <h2 class="cagr_content"><strong>Our Other Financial Calculators:</strong></h2>
+            <ul class="ul_direction">
+                <li><a href="https://amortization-calc.net/">Amortization
+                        Calculator</a></li>
+                <li><a href="https://sipcalculator.net/">SIP Calculator</a></li>
+                <li><a href="https://irrcalculator.net/">IRR Calculator</a></li>
+                <li><a href="https://npvcalculator.info/">NPV Calculator</a></li>
+            </ul>
+        </div>
+    </div>
+    <a href="/contact" id="contact">contact</a>
+
+    <div id= popup class="popup">
+        <h3>โปรโมชั่นไนกี้</h3>
+        <p>ลดราคาพิเศษวันนี้เท่านั้น</p>
+        <div class="close-btn" onclick="closePopup()">ปิด</div>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
